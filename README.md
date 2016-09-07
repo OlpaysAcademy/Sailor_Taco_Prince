@@ -11,8 +11,8 @@ This exercise consists of an application that can:
 * Add ingredients to tacos
 * List taco recipes names and indicate next to them whether they are read or unread
 * Show a count of number of read taco recipes
-* Be able to mark every taco recipe as read or unread
-* Be able to mark as read or unread in the taco detail view
+* Be able to mark all taco recipes as read or unread in the taco list view
+* Be able to mark one taco recipe as read or unread in the taco detail view
 
 Requirements:
 * Everything should be in a single page (no routes). There should be a sidenav that lists taco recipes
