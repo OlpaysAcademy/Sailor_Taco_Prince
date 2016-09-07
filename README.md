@@ -36,3 +36,4 @@ For example:
 * [Redux Site](https://reduxframework.com/)
 * [Redux Dev Tools](https://github.com/gaearon/redux-devtools) - See [Browser Extension](https://github.com/gaearon/redux-devtools#browser-extension) Section
 * [Egghead Redux](https://egghead.io/courses/getting-started-with-redux)
+* [Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.6i75hbuhu)
