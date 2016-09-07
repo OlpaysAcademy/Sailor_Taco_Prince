@@ -13,9 +13,12 @@ This exercise consists of an application that can:
 
 Requirements:
 * Everything should be in a single page (no routes). There should be a sidenav that lists taco recipes
--------------------------
-|taco recipes|taco detail
--------------------------
+
+```
+--------------------------
+|taco recipes|taco detail|
+--------------------------
+```
 * Use redux
 * Taco recipes
 
