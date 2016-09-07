@@ -1,5 +1,7 @@
 # Sailor_Taco_Prince
 
+![Taco Prince](https://4.bp.blogspot.com/-Gi8lUQcmfO0/VweZ3p0ZGbI/AAAAAAAAAoI/VYHdNkmedF0WdARQle7ccTJAqKuU9nBmg/s1600/hungry%2Bprince.jpg)
+
 ```
 This repository is only for educational purpose, it is not intended to work in any real way 
 ```
@@ -30,4 +32,8 @@ For example:
 `git checkout -b copo-test // For keving` 
 
 # Additional Content
-* [React Video](https://www.youtube.com/watch?v=vkJ5Lc0WwVw)
+* [Redux Video](https://www.youtube.com/watch?v=HsX0VHMw_Z8)
+* [Redux Site](redux.js.org)
+* [Redux Dev Tools](https://github.com/gaearon/redux-devtools) - See [Browser Extension](https://github.com/gaearon/redux-devtools#browser-extension) Section
+* [Egghead Redux](https://egghead.io/courses/getting-started-with-redux)
+* 
