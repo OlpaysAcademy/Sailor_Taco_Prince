@@ -6,6 +6,7 @@ This repository is only for educational purpose, it is not intended to work in a
 
 This exercise consists of an application that can:
 * Create taco recipes
+* Add ingredients to tacos
 * List taco recipes names and indicate next to them whether they are read or unread
 * Show a count of number of read taco recipes
 * Be able to mark every taco recipe as read or unread
