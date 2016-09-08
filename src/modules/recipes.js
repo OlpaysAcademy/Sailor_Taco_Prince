@@ -1,8 +1,15 @@
-export function addRecipe(recipes, recipe) {
+export function addRecipeId(recipes, recipeId) {
   return [
     ...recipes,
-    createRecipe(recipe)
+    recipeId
   ]
+}
+
+export function addRecipe(recipesById, recipe) {
+  return {
+    ...recipesById,
+    [recipe.id]: createRecipe(recipe)
+  }
 }
 
 function createRecipe({ id, name }) {

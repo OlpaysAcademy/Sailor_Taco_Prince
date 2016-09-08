@@ -4,11 +4,11 @@ import React from 'react';
 
 import {List, ListItem} from 'material-ui/List';
 
-const Recipes = props =>
+const Recipes = ({ ingredients }) =>
     <List>
-        <ListItem primaryText="Chile" />
-        <ListItem primaryText="Meat" />
-        <ListItem primaryText="Avocado" />
+        {
+            ingredients && ingredients.map(ingredient => <ListItem primaryText={ingredient.name} />)
+        }
     </List>
 
 export default Recipes;

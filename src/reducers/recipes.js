@@ -1,9 +1,9 @@
-import { addRecipe } from '../modules/recipes';
+import { addRecipeId } from '../modules/recipes';
 
 const recipes = (state = [], action) => {
   switch (action.type) {
     case 'CREATE_RECIPE':
-      return addRecipe(state, { id: action.id, name: action.name })
+      return addRecipeId(state, action.id)
     default:
       return state
   }

@@ -14,21 +14,33 @@ import FontIcon from 'material-ui/FontIcon';
  */
 const RecipeShowIcon = props => <IconButton {...props} children={<FontIcon className="material-icons">visibility</FontIcon>} />
 
-const RecipeItem = props => {
-    const style = { backgroundColor: !props.isRead ? 'rgba(0,0,0,0.2)' : null };
+const RecipeItem = ({ name, isRead, onShowRecipe }) => {
+    const style = { backgroundColor: !isRead ? 'rgba(0,0,0,0.2)' : null };
     return (
         <ListItem
-            primaryText={props.name}
+            primaryText={name}
             style={style}
             leftCheckbox={<Checkbox />}
-            rightIconButton={<RecipeShowIcon />}
+            rightIconButton={<RecipeShowIcon onClick={onShowRecipe} />}
             />
     );
 }
 
-const Recipes = ({ recipes }) =>
-    <List>
-        {recipes && recipes.map(recipe => <RecipeItem name={recipe.name} isRead={recipe.isRead} />)}
-    </List>
+const Recipes = ({ recipesById, onShowRecipe }) => {
+    return (
+        <List>
+            {
+                recipesById && Object.keys(recipesById).map(
+                    recipeId => <RecipeItem
+                        key={recipeId}
+                        onShowRecipe={() => onShowRecipe(recipeId) }
+                        name={recipesById[recipeId].name}
+                        isRead={recipesById[recipeId].isRead}
+                        />
+                )
+            }
+        </List>
+    );
+}
 
 export default Recipes;
