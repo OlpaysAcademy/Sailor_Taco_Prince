@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import tacos from './tacos'
+import recipes from './recipes'
 
 const tacoApp = combineReducers({
-  tacos
+  recipes
 })
 
 export default tacoApp

@@ -7,7 +7,7 @@ import { createStore } from 'redux';
 import AppContainer from './AppContainer';
 import AppHeader from './AppHeader';
 import Sidenav from './Sidenav';
-import RecipesCount from './RecipesCount';
+import RecipesCount from '../containers/RecipesCount';
 import RecipePage from './RecipePage';
 import Body from './Body';
 import RecipesPage from './RecipesPage';

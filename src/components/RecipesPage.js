@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import CreateRecipe from './CreateRecipe';
+import CreateRecipe from '../containers/CreateRecipe';
 import ReadRecipes from './ReadRecipes';
-import Recipes from './Recipes';
+import Recipes from '../containers/Recipes';
 
 const RecipesPage = props =>
     <div style={{ flex: 1 }}>

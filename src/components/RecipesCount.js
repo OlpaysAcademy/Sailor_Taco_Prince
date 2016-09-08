@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-const RecipesCount = props =>
+const RecipesCount = ({ unreadRecipes }) =>
     <div style={{ padding: '1rem' }}>
-        Recipes(2)
+        Recipes({unreadRecipes})
     </div>
 
 export default RecipesCount;
