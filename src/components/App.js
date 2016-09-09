@@ -17,20 +17,20 @@ import reducer from '../reducers';
 const store = createStore(reducer, window.devToolsExtension && window.devToolsExtension());
 
 const App = props => {
-  return (
-    <Provider store={store}>
-      <AppContainer>
-        <Sidenav>
-          <AppHeader />
-          <RecipesCount />
-          <RecipesPage />
-        </Sidenav>
-        <Body>
-          <RecipePage />
-        </Body>
-      </AppContainer>
-    </Provider>
-  );
+    return (
+        <Provider store={store}>
+            <AppContainer>
+                <Sidenav>
+                    <AppHeader />
+                    <RecipesCount />
+                    <RecipesPage />
+                </Sidenav>
+                <Body>
+                    <RecipePage />
+                </Body>
+            </AppContainer>
+        </Provider>
+    );
 }
 
 export default App;

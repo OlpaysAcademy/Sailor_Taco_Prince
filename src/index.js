@@ -13,6 +13,6 @@ import './index.css';
 injectTapEventPlugin();
 
 render(
-  <App />,
-  document.getElementById('root')
+    <App />,
+    document.getElementById('root')
 );

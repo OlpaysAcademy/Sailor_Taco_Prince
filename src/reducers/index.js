@@ -5,10 +5,10 @@ import recipesById from './recipesById';
 import ingredientsById from './ingredientsById';
 
 const tacoApp = combineReducers({
-  recipes,
-  recipesById,
-  ingredientsById,
-  shownRecipe
+    recipes,
+    recipesById,
+    ingredientsById,
+    shownRecipe
 });
 
 export default tacoApp;
