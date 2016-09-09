@@ -14,28 +14,32 @@ import FontIcon from 'material-ui/FontIcon';
  */
 const RecipeShowIcon = props => <IconButton {...props} children={<FontIcon className="material-icons">visibility</FontIcon>} />
 
-const RecipeItem = ({ name, isRead, onShowRecipe }) => {
+const RecipeItem = ({ name, id, isRead, isSelected, onShowRecipe, onSelectRecipe, onUnselectRecipe }) => {
     const style = { backgroundColor: !isRead ? 'rgba(0,0,0,0.2)' : null };
     return (
         <ListItem
             primaryText={name}
             style={style}
-            leftCheckbox={<Checkbox />}
+            leftCheckbox={<Checkbox checked={isSelected} onCheck={(ev, isInputChecked) => isInputChecked ? onSelectRecipe(id) : onUnselectRecipe(id)} />}
             rightIconButton={<RecipeShowIcon onClick={onShowRecipe} />}
             />
     );
 }
 
-const Recipes = ({ recipesById, onShowRecipe }) => {
+const Recipes = ({ recipesById, onShowRecipe, onSelectRecipe, onUnselectRecipe }) => {
     return (
         <List>
             {
                 recipesById && Object.keys(recipesById).map(
                     recipeId => <RecipeItem
                         key={recipeId}
+                        id={recipeId}
                         onShowRecipe={() => onShowRecipe(recipeId) }
+                        onSelectRecipe={onSelectRecipe}
+                        onUnselectRecipe={onUnselectRecipe}
                         name={recipesById[recipeId].name}
                         isRead={recipesById[recipeId].isRead}
+                        isSelected={recipesById[recipeId].isSelected}
                         />
                 )
             }

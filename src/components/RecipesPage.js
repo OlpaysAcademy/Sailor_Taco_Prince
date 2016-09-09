@@ -3,7 +3,7 @@
 import React from 'react';
 
 import CreateRecipe from '../containers/CreateRecipe';
-import ReadRecipes from './ReadRecipes';
+import ReadRecipes from '../containers/ReadRecipes';
 import Recipes from '../containers/Recipes';
 
 const RecipesPage = props =>

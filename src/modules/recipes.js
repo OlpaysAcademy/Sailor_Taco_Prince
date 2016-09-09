@@ -24,15 +24,61 @@ export function addIngredient(recipesById, { recipeId, ingredientId }) {
 export function readRecipe(recipesById, { id }) {
   return {
     ...recipesById,
-    [id]: setProperty(recipesById[id], 'isRead', true)
+    [id]: read(recipesById[id])
   }
 }
 
 export function unreadRecipe(recipesById, { id }) {
   return {
     ...recipesById,
-    [id]: setProperty(recipesById[id], 'isRead', false)
+    [id]: unread(recipesById[id])
   }
+}
+
+export function selectRecipe(recipesById, { id }) {
+  return {
+    ...recipesById,
+    [id]: setProperty(recipesById[id], 'isSelected', true)
+  }
+}
+
+export function unselectRecipe(recipesById, { id }) {
+  return {
+    ...recipesById,
+    [id]: setProperty(recipesById[id], 'isSelected', false)
+  }
+}
+
+function read(recipe) {
+  return setProperty(recipe, 'isRead', true);
+}
+
+function unread(recipe) {
+  return setProperty(recipe, 'isRead', false);
+}
+
+export function readSelectedRecipes(recipes) {
+  return R.mapObjIndexed(recipe => recipe.isSelected ? read(recipe) : recipe, recipes);
+}
+
+export function unreadSelectedRecipes(recipes) {
+  return R.mapObjIndexed(recipe => recipe.isSelected ? unread(recipe) : recipe, recipes);
+}
+
+export function selectAllRecipes(recipes) {
+  return R.mapObjIndexed(recipe => setSelected(recipe), recipes);
+}
+
+export function unselectAllRecipes(recipes) {
+  return R.mapObjIndexed(recipe => setUnselected(recipe), recipes);
+}
+
+function setSelected(recipe) {
+  return setProperty(recipe, 'isSelected', true);
+}
+
+function setUnselected(recipe) {
+  return setProperty(recipe, 'isSelected', false);
 }
 
 function setProperty(recipe, property, value) {
@@ -61,7 +107,7 @@ const isUnread = R.complement(isRead);
 
 // use flow to show that recipes is an object, not an array
 export const unreadRecipesCount = R.pipe(
-    R.filter(isUnread),
-    R.values,
-    R.length
-  );
+  R.filter(isUnread),
+  R.values,
+  R.length
+);

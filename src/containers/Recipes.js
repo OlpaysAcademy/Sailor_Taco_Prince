@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { showRecipe, readRecipe } from '../actions'
+import { showRecipe, readRecipe, selectRecipe, unselectRecipe } from '../actions'
 import Recipes from '../components/Recipes'
 
 const mapStateToProps = ({ recipesById }) => {
@@ -14,6 +14,12 @@ const mapDispatchToProps = dispatch => {
         onShowRecipe: id => {
             dispatch(showRecipe(id))
             dispatch(readRecipe(id))
+        },
+        onSelectRecipe: id => {
+            dispatch(selectRecipe(id))
+        },
+        onUnselectRecipe: id => {
+            dispatch(unselectRecipe(id))
         }
     }
 }

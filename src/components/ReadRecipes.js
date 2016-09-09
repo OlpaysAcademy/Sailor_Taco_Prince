@@ -4,12 +4,12 @@ import React from 'react';
 import Checkbox from 'material-ui/Checkbox';
 import ReadButtons from './ReadButtons';
 
-const ReadRecipes = props =>
+const ReadRecipes = ({ readSelectedRecipes, unreadSelectedRecipes, selectAllRecipes, unselectAllRecipes }) =>
     <div style={{ display: 'flex', alignItems: 'center', padding: '1rem' }}>
         <div>
-            <Checkbox />
+            <Checkbox onCheck={(ev, isInputChecked) => isInputChecked ? selectAllRecipes() : unselectAllRecipes()} />
         </div>
-        <ReadButtons />
+        <ReadButtons onRead={() => readSelectedRecipes() } onUnread={() => unreadSelectedRecipes() } />
     </div>
 
 export default ReadRecipes;
