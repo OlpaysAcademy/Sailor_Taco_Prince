@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { showRecipe } from '../actions'
+import { showRecipe, readRecipe } from '../actions'
 import Recipes from '../components/Recipes'
 
 const mapStateToProps = ({ recipesById }) => {
@@ -13,6 +13,7 @@ const mapDispatchToProps = dispatch => {
     return {
         onShowRecipe: id => {
             dispatch(showRecipe(id))
+            dispatch(readRecipe(id))
         }
     }
 }

@@ -30,3 +30,10 @@ export const showRecipe = id => {
         id
     }
 }
+
+export const readRecipe = id => {
+    return {
+        type: 'READ_RECIPE',
+        id
+    }
+}
