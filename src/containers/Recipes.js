@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { showRecipe } from '../actions'
 import Recipes from '../components/Recipes'
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ recipesById }) => {
     return {
-        recipesById: state.recipesById
+        recipesById
     }
 }
 

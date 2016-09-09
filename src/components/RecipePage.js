@@ -3,29 +3,24 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 
-import CreateIngredient from './CreateIngredient';
-import Ingredients from './Ingredients';
+import CreateIngredient from '../containers/CreateIngredient';
+import Ingredients from '../containers/Ingredients';
 
-const RecipePage = ({ recipesById, shownRecipe }) => {
+const RecipePage = ({ recipesById, shownRecipe, ingredientsById }) => {
     const recipe = recipesById[shownRecipe.id];
-    const shouldShowTitle = recipesById && shownRecipe && recipe;
+    const shouldShowTitle = recipesById && shownRecipe.id && recipe;
     const title = shouldShowTitle ? recipe.name : '';
+
     return (
         <div style={{ display: 'flex', flex: 1, flexDirection: 'column' }}>
             <AppBar
                 title={title}
                 iconStyleLeft={{ display: 'none' }}
                 />
-            {
-                recipe
-                    ?
-                    <div>
-                        <CreateIngredient />
-                        <Ingredients ingredients={recipe.ingredients} />
-                    </div>
-                    :
-                    <div></div>
-            }
+            <div>
+                <CreateIngredient />
+                <Ingredients />
+            </div>
         </div>
     );
 }

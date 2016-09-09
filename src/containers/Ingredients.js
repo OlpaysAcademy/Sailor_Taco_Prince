@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import RecipePage from '../components/RecipePage'
+import Ingredients from '../components/Ingredients'
 
 const mapStateToProps = ({ shownRecipe, recipesById, ingredientsById }) => {
     return {
@@ -13,4 +13,4 @@ const mapStateToProps = ({ shownRecipe, recipesById, ingredientsById }) => {
 export default connect(
     mapStateToProps,
     null
-)(RecipePage);
+)(Ingredients);

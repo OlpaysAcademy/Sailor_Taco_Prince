@@ -14,7 +14,7 @@ import RecipesPage from './RecipesPage';
 
 import reducer from '../reducers';
 
-const store = createStore(reducer);
+const store = createStore(reducer, window.devToolsExtension && window.devToolsExtension());
 
 const App = props => {
   return (

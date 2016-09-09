@@ -12,6 +12,20 @@ export function addRecipe(recipesById, recipe) {
   }
 }
 
+export function addIngredient(recipesById, { recipeId, ingredientId }) {
+  return {
+    ...recipesById,
+    [recipeId]: addIngredientToRecipe(recipesById[recipeId], ingredientId)
+  }
+}
+
+function addIngredientToRecipe(recipe, ingredientId) {
+  return {
+    ...recipe,
+    ingredients: [...recipe.ingredients, ingredientId]
+  };
+}
+
 function createRecipe({ id, name }) {
   return {
     id,
@@ -23,5 +37,5 @@ function createRecipe({ id, name }) {
 }
 
 export function unreadRecipesCount(recipes) {
-    return recipes.filter(recipe => !recipe.isRead).length;
+  return recipes.filter(recipe => !recipe.isRead).length;
 }
