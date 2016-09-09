@@ -22,7 +22,7 @@ const CreateIngredient = ({ shownRecipe, onClick }) => {
             </form>
         );
     }
-    return <div>Nada</div>;
+    return <div></div>;
 }
 
 export default CreateIngredient;

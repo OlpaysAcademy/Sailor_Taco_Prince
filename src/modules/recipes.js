@@ -28,6 +28,13 @@ export function readRecipe(recipesById, { id }) {
   }
 }
 
+export function unreadRecipe(recipesById, { id }) {
+  return {
+    ...recipesById,
+    [id]: setProperty(recipesById[id], 'isRead', false)
+  }
+}
+
 function setProperty(recipe, property, value) {
   return { ...recipe, [property]: value }
 }

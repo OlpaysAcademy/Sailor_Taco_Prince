@@ -16,7 +16,7 @@ const Recipes = ({ shownRecipe, recipesById, ingredientsById }) => {
             </List>
         );
     }
-    return <div>No ingredients</div>
+    return <div></div>
 }
 
 export default Recipes;

@@ -37,3 +37,10 @@ export const readRecipe = id => {
         id
     }
 }
+
+export const unreadRecipe = id => {
+    return {
+        type: 'UNREAD_RECIPE',
+        id
+    }
+}

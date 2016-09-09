@@ -2,15 +2,14 @@
 
 import React from 'react';
 import Checkbox from 'material-ui/Checkbox';
-import RaisedButton from 'material-ui/RaisedButton';
+import ReadButtons from './ReadButtons';
 
 const ReadRecipes = props =>
     <div style={{ display: 'flex', alignItems: 'center', padding: '1rem' }}>
         <div>
             <Checkbox />
         </div>
-        <RaisedButton style={{ margin: '0px 5px' }} label="Mark as unread" />
-        <RaisedButton style={{ margin: '0px 5px' }} label="Mark as read" />
+        <ReadButtons />
     </div>
 
 export default ReadRecipes;

@@ -8,7 +8,7 @@ import AppContainer from './AppContainer';
 import AppHeader from './AppHeader';
 import Sidenav from './Sidenav';
 import RecipesCount from '../containers/RecipesCount';
-import RecipePage from '../containers/RecipePage';
+import RecipePage from './RecipePage';
 import Body from './Body';
 import RecipesPage from './RecipesPage';
 
