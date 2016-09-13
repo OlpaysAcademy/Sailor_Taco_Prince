@@ -1,3 +1,5 @@
+// @flow
+
 import { connect } from 'react-redux'
 import { createIngredient, addIngredient } from '../actions'
 import CreateIngredient from '../components/CreateIngredient'

@@ -1,3 +1,5 @@
+// @flow
+
 import { connect } from 'react-redux'
 
 import ReadRecipes from '../components/ReadRecipes'
@@ -5,10 +7,10 @@ import { readSelectedRecipes, unreadSelectedRecipes, selectAllRecipes, unselectA
 
 const mapDispatchToProps = dispatch => {
     return {
-        readSelectedRecipes: id => {
+        readSelectedRecipes: () => {
             dispatch(readSelectedRecipes());
         },
-        unreadSelectedRecipes: id => {
+        unreadSelectedRecipes: () => {
             dispatch(unreadSelectedRecipes());
         },
         selectAllRecipes: () => {

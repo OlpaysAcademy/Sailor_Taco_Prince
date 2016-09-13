@@ -4,7 +4,13 @@ import React from 'react';
 
 import {List, ListItem} from 'material-ui/List';
 
-const Recipes = ({ shownRecipe, recipesById, ingredientsById }) => {
+type Props = {
+    shownRecipe: { id: Number },
+    recipesById: Object,
+    ingredientsById: Object
+};
+
+const Recipes = ({ shownRecipe, recipesById, ingredientsById }: Props) => {
     const recipe = recipesById[shownRecipe.id];
     const ingredients = (recipe && recipe.ingredients.length) ? recipe.ingredients.map(ingredient => ingredientsById[ingredient]) : [];
     if (recipe) {

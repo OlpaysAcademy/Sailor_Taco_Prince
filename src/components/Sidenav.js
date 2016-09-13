@@ -2,10 +2,12 @@
 
 import React from 'react';
 
-const Sidenav = props => {
+import type { ChildrenProps } from '../types/components';
+
+const Sidenav = ({ children }: ChildrenProps) => {
     return (
         <div style={{flex: 1}}>
-            {props.children}
+            {children}
         </div>
     );
 }

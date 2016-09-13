@@ -1,3 +1,5 @@
+// @flow
+
 import {
   addRecipe,
   addIngredient,
@@ -11,7 +13,9 @@ import {
   unselectAllRecipes
 } from '../modules/recipes';
 
-const recipesById = (state = {}, action) => {
+import type { State } from '../types/state';
+
+const recipesById = (state: State.recipesById = {}, action: any): State.recipesById => {
   switch (action.type) {
     case 'CREATE_RECIPE':
       return addRecipe(state, { id: action.id, name: action.name })

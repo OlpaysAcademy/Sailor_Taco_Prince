@@ -16,7 +16,7 @@ import reducer from '../reducers';
 
 const store = createStore(reducer, window.devToolsExtension && window.devToolsExtension());
 
-const App = props => {
+const App = () => {
     return (
         <Provider store={store}>
             <AppContainer>

@@ -1,3 +1,5 @@
+// @flow
+
 import { connect } from 'react-redux'
 
 import { showRecipe, readRecipe, selectRecipe, unselectRecipe } from '../actions'

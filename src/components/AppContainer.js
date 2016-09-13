@@ -3,7 +3,9 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-const AppContainer = props =>
+import type { ChildrenProps } from '../types/components';
+
+const AppContainer = (props : ChildrenProps ) =>
     <MuiThemeProvider>
         <div className='AppContainer' style={{ display: 'flex' }}>
             {props.children}

@@ -14,7 +14,20 @@ import FontIcon from 'material-ui/FontIcon';
  */
 const RecipeShowIcon = props => <IconButton {...props} children={<FontIcon className="material-icons">visibility</FontIcon>} />
 
-const RecipeItem = ({ name, id, isRead, isSelected, onShowRecipe, onSelectRecipe, onUnselectRecipe }) => {
+type OnSelectedRecipe = (id: string) => void;
+type OnUnselectedRecipe = (id: string) => void;
+
+type RecipeItemProps = {
+    name: string,
+    id: string,
+    isRead: boolean,
+    isSelected: boolean,
+    onShowRecipe: () => void,
+    onSelectRecipe: OnSelectedRecipe,
+    onUnselectRecipe: OnUnselectedRecipe
+};
+
+const RecipeItem = ({ name, id, isRead, isSelected, onShowRecipe, onSelectRecipe, onUnselectRecipe }: RecipeItemProps) => {
     const style = { backgroundColor: !isRead ? 'rgba(0,0,0,0.2)' : null };
     return (
         <ListItem
@@ -26,7 +39,14 @@ const RecipeItem = ({ name, id, isRead, isSelected, onShowRecipe, onSelectRecipe
     );
 }
 
-const Recipes = ({ recipesById, onShowRecipe, onSelectRecipe, onUnselectRecipe }) => {
+type RecipesProps = {
+    recipesById: Object,
+    onShowRecipe: (id: string) => void,
+    onSelectRecipe: OnSelectedRecipe,
+    onUnselectRecipe: OnUnselectedRecipe
+};
+
+const Recipes = ({ recipesById, onShowRecipe, onSelectRecipe, onUnselectRecipe }: RecipesProps) => {
     return (
         <List>
             {

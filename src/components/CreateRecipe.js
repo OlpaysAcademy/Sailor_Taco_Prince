@@ -4,7 +4,11 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const CreateRecipe = ({ onClick }) => {
+type Props = {
+    onClick: (name: String) => void
+}
+
+const CreateRecipe = ({ onClick }: Props) => {
     let input;
     return (
         <form style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}

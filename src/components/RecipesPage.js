@@ -6,7 +6,7 @@ import CreateRecipe from '../containers/CreateRecipe';
 import ReadRecipes from '../containers/ReadRecipes';
 import Recipes from '../containers/Recipes';
 
-const RecipesPage = props =>
+const RecipesPage = () =>
     <div style={{ flex: 1 }}>
         <CreateRecipe />
         <ReadRecipes />
