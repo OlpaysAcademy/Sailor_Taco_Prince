@@ -4,8 +4,10 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import type { Recipe } from '../types/state';
+
 type Props = {
-    onClick: (name: String) => void
+    onClick: (name: Recipe.id) => void
 }
 
 const CreateRecipe = ({ onClick }: Props) => {

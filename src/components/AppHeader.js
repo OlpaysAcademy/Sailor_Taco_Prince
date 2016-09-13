@@ -5,7 +5,9 @@ import AppBar from 'material-ui/AppBar';
 
 import Logo from './Logo';
 
-type Props = { currentPageName: string }
+import type { Recipe } from '../types/state';
+
+type Props = { currentPageName: Recipe.name };
 
 const AppHeader = ({ currentPageName }: Props) =>
     <AppBar title={currentPageName} iconElementLeft={<Logo/>} />

@@ -4,10 +4,12 @@ import React from 'react';
 
 import {List, ListItem} from 'material-ui/List';
 
+import type { State, Recipe } from '../types/state';
+
 type Props = {
-    shownRecipe: { id: Number },
-    recipesById: Object,
-    ingredientsById: Object
+    shownRecipe: { id: Recipe.id },
+    recipesById: State.recipesById,
+    ingredientsById: State.ingredientsById
 };
 
 const Recipes = ({ shownRecipe, recipesById, ingredientsById }: Props) => {

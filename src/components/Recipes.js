@@ -7,6 +7,8 @@ import Checkbox from 'material-ui/Checkbox';
 import IconButton from 'material-ui/IconButton';
 import FontIcon from 'material-ui/FontIcon';
 
+import type { State, Recipe } from '../types/state';
+
 /*
  * Learning: Wrappers should always pass down props to inner elements
  * The problem was that RecipeShowIcon was not passing down styles that ListItem should give to IconButton
@@ -14,14 +16,14 @@ import FontIcon from 'material-ui/FontIcon';
  */
 const RecipeShowIcon = props => <IconButton {...props} children={<FontIcon className="material-icons">visibility</FontIcon>} />
 
-type OnSelectedRecipe = (id: string) => void;
-type OnUnselectedRecipe = (id: string) => void;
+type OnSelectedRecipe = (id: Recipe.id) => void;
+type OnUnselectedRecipe = (id: Recipe.id) => void;
 
 type RecipeItemProps = {
-    name: string,
-    id: string,
-    isRead: boolean,
-    isSelected: boolean,
+    name: Recipe.name,
+    id: Recipe.id,
+    isRead: Recipe.isRead,
+    isSelected: Recipe.isSelected,
     onShowRecipe: () => void,
     onSelectRecipe: OnSelectedRecipe,
     onUnselectRecipe: OnUnselectedRecipe
@@ -40,8 +42,8 @@ const RecipeItem = ({ name, id, isRead, isSelected, onShowRecipe, onSelectRecipe
 }
 
 type RecipesProps = {
-    recipesById: Object,
-    onShowRecipe: (id: string) => void,
+    recipesById: State.recipesById,
+    onShowRecipe: (id: Recipe.id) => void,
     onSelectRecipe: OnSelectedRecipe,
     onUnselectRecipe: OnUnselectedRecipe
 };
