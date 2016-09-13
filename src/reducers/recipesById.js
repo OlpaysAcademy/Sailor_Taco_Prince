@@ -22,13 +22,13 @@ const recipesById = (state: State.recipesById = {}, action: any): State.recipesB
     case 'ADD_INGREDIENT':
       return addIngredient(state, { recipeId: action.recipeId, ingredientId: action.ingredientId })
     case 'READ_RECIPE':
-      return readRecipe(state, { id: action.id })
+      return readRecipe(state, action.id)
     case 'UNREAD_RECIPE':
-      return unreadRecipe(state, { id: action.id })
+      return unreadRecipe(state, action.id)
     case 'SELECT_RECIPE':
-      return selectRecipe(state, { id: action.id })
+      return selectRecipe(state, action.id)
     case 'UNSELECT_RECIPE':
-      return unselectRecipe(state, { id: action.id })
+      return unselectRecipe(state, action.id)
     case 'READ_SELECTED_RECIPES':
       return readSelectedRecipes(state)
     case 'UNREAD_SELECTED_RECIPES':

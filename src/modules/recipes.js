@@ -25,28 +25,28 @@ export function addIngredient(recipesById: State.recipesById, { recipeId, ingred
   }
 }
 
-export function readRecipe(recipesById: State.recipesById, { id }: { id: Recipe.id } ): State.recipesById {
+export function readRecipe(recipesById: State.recipesById, id: Recipe.id ): State.recipesById {
   return {
     ...recipesById,
     [id]: read(recipesById[id])
   }
 }
 
-export function unreadRecipe(recipesById: State.recipesById, { id }: { id: Recipe.id }): State.recipesById {
+export function unreadRecipe(recipesById: State.recipesById, id: Recipe.id): State.recipesById {
   return {
     ...recipesById,
     [id]: unread(recipesById[id])
   }
 }
 
-export function selectRecipe(recipesById: State.recipesById, { id }: { id: Recipe.id }): State.recipesById {
+export function selectRecipe(recipesById: State.recipesById, id: Recipe.id): State.recipesById {
   return {
     ...recipesById,
     [id]: setProperty(recipesById[id], 'isSelected', true)
   }
 }
 
-export function unselectRecipe(recipesById: State.recipesById, { id }: { id: Recipe.id }): State.recipesById {
+export function unselectRecipe(recipesById: State.recipesById, id: Recipe.id): State.recipesById {
   return {
     ...recipesById,
     [id]: setProperty(recipesById[id], 'isSelected', false)
