@@ -1,18 +1,17 @@
 /*
- * action types
+ * actions
  */
-
-export const READ_ALL_RECIPES = 'READ_ALL_RECIPES'
-export const TOGGLE_RECIPE = 'TOGGLE_RECIPE'
-export const ADD_RECIPE = 'ADD_RECIPE'
-export const ADD_INGREDIENT = 'ADD_INGREDIENT'
 
 export const readAllRecipes = () => {
     return { type: 'READ_ALL_RECIPES' }
 }
 
-export const toggleRecipe = index => {
-    return { type: 'TOGGLE_RECIPE', index }
+export const unreadAllRecipes = () => {
+    return { type: 'UNREAD_ALL_RECIPES' }
+}
+
+export const toggleRecipe = id => {
+    return { type: 'TOGGLE_RECIPE', id }
 }
 
 export const addRecipe = recipe => {
@@ -21,4 +20,8 @@ export const addRecipe = recipe => {
 
 export const addIngredient = ingredient => {
     return { type: 'ADD_INGREDIENT', ingredient }
+}
+
+export const showRecipe = recipeId => {
+    return { type: 'SHOW_RECIPE', recipeId }
 }

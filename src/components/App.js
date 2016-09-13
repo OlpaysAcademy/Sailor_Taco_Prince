@@ -1,9 +1,14 @@
-import React from 'react';
+import React from 'react'
+import Header from './Header'
+import Navigation from './Navigation'
+import MainContentContainer from './../containers/MainContentContainer'
 
-class App extends React.Component {
-    render(){
-        return <h1>La crepe, {this.props.crap}</h1>
-    }
-}
+const App = () => (
+    <div>
+        <Header />
+        <Navigation />
+        <MainContentContainer />
+    </div>
+)
 
 export default App

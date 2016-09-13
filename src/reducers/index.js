@@ -1,5 +1,8 @@
 const initialState = {
-    recipes: []
+    recipeToShow: '',
+    recipes: [{ id: 335, name: 'Arroz primaveral', ingredients: ['arroz', 'primavera'], isRead: false },
+            { id: 332, name: 'Empanated', ingredients: ['harina', 'carne', 'cebolla'], isRead: false },
+            { id: 423, name: 'Ensalated', ingredients: ['tomate', 'lechuga', 'zanahoria', 'huevo'], isRead: false }]
 }
 
 export default function recipes(state = initialState, action) {
@@ -11,18 +14,19 @@ export default function recipes(state = initialState, action) {
                     {
                         id: action.recipe.id,
                         name: action.recipe.name,
-                        ingredients: []
+                        ingredients: [],
+                        isRead: false
                     }
                 ]
             })
         case 'ADD_INGREDIENT':
             return Object.assign({}, state, {
                 recipes: state.recipes.map(recipe => {
-                    if ( recipe.id === action.recipeId ) {
-                        Object.assign({}, recipe, {
+                    if ( recipe.id === action.ingredient.recipeId ) {
+                        return Object.assign({}, recipe, {
                             ingredients: [
                                 ...recipe.ingredients,
-                                action.ingredient
+                                action.ingredient.name
                             ]
                         })
                     }
@@ -32,8 +36,8 @@ export default function recipes(state = initialState, action) {
         case 'TOGGLE_RECIPE':
             return Object.assign({}, state, {
                 recipes: state.recipes.map(recipe => {
-                    if ( recipe.id === action.recipeId ) {
-                        Object.assign({}, recipe, {
+                    if ( recipe.id === action.id ) {
+                        return Object.assign({}, recipe, {
                             isRead: !recipe.isRead
                         })
                     }
@@ -43,11 +47,22 @@ export default function recipes(state = initialState, action) {
         case 'READ_ALL_RECIPES':
             return Object.assign({}, state, {
                 recipes: state.recipes.map(recipe => {
-                    Object.assign({}, recipe, {
+                    return Object.assign({}, recipe, {
                         isRead: true
                     })
-                    return recipe
                 })
+            })
+        case 'UNREAD_ALL_RECIPES':
+            return Object.assign({}, state, {
+                recipes: state.recipes.map(recipe => {
+                    return Object.assign({}, recipe, {
+                        isRead: false
+                    })
+                })
+            })
+        case 'SHOW_RECIPE':
+            return Object.assign({}, state, {
+                recipeToShow: action.recipeId
             })
         default:
             return state

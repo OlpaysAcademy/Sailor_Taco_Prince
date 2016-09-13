@@ -1,11 +1,16 @@
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './components/App';
 import reducer from './reducers';
+import _ from 'lodash';
 
-// const store = createStore(reducer);
+const store = createStore(reducer);
 
-// ReactDOM.render(<App crap='pooperman!'/>, document.getElementById('app'))
-
-// import { readAllRecipes, addRecipe, addIngredient, toggleRecipe } from './actions'
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('app')
+)
