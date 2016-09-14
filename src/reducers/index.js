@@ -62,7 +62,15 @@ export default function recipes(state = initialState, action) {
             })
         case 'SHOW_RECIPE':
             return Object.assign({}, state, {
-                recipeToShow: action.recipeId
+                recipeToShow: action.recipeId,
+                recipes: state.recipes.map(recipe => {
+                    if ( recipe.id === action.recipeId ) {
+                        return Object.assign({}, recipe, {
+                            isRead: true
+                        })
+                    }
+                    return recipe
+                })
             })
         default:
             return state
