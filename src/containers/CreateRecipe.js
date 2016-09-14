@@ -6,7 +6,7 @@ import CreateRecipe from '../components/CreateRecipe'
 
 const mapDispatchToProps = dispatch => {
     return {
-        onClick: name => {
+        createRecipe: name => {
             dispatch(createRecipe(name))
         }
     }

@@ -1,8 +1,10 @@
 // @flow
 
-import type { State } from '../types/state';
+import type { ShownRecipe } from '../types/state';
 
-const shownRecipe = (state: State.shownRecipe = { id: '' }, action: any): State.shownRecipe => {
+export const INITIAL_STATE = { id: '' };
+
+const shownRecipe = (state: ShownRecipe = INITIAL_STATE, action: any): ShownRecipe => {
     switch (action.type) {
         case 'SHOW_RECIPE':
             return { ...state, id: action.id }

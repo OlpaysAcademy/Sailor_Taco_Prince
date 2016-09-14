@@ -2,9 +2,7 @@
 
 import React from 'react';
 
-import type { ChildrenProps } from '../types/components';
-
-const Body = ({ children }: ChildrenProps) =>
+const Body = ({ children }: any) =>
     <div style={{ flex: 3, display: 'flex', flexDirection: 'column' }}>
         {children}
     </div>

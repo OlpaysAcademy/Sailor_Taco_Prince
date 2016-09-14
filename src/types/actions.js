@@ -4,45 +4,45 @@ import type { Recipe, Ingredient } from './state';
 
 export type CreateRecipe = {
     type: 'CREATE_RECIPE',
-    id: Recipe.id,
-    name: Recipe.name
+    id: string,
+    name: string
 };
 
 export type CreateIngredient = {
     type: 'CREATE_INGREDIENT',
-    id: Ingredient.id,
-    name: Ingredient.name
+    id: string,
+    name: string
 };
 
 export type AddIngredient = {
     type: 'ADD_INGREDIENT',
-    ingredientId: Ingredient.id,
-    recipeId: Recipe.id
+    ingredientId: string,
+    recipeId: string
 };
 
 export type ShowRecipe = {
     type: 'SHOW_RECIPE',
-    id: Recipe.id
+    id: string
 };
 
 export type ReadRecipe = {
     type: 'READ_RECIPE',
-    id: Recipe.id
+    id: string
 };
 
 export type UnreadRecipe = {
     type: 'UNREAD_RECIPE',
-    id: Recipe.id
+    id: string
 };
 
 export type SelectRecipe = {
     type: 'SELECT_RECIPE',
-    id: Recipe.id
+    id: string
 };
 
 export type UnselectRecipe = {
     type: 'UNSELECT_RECIPE',
-    id: Recipe.id
+    id: string
 };
 
 export type ReadSelectedRecipes = {

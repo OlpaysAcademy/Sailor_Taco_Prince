@@ -4,11 +4,9 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-import type { Recipe } from '../types/state';
-
 type Props = {
-    shownRecipe: { id: Recipe.id },
-    onClick: (recipeId: Recipe.id, name: Recipe.name) => void
+    shownRecipe: { id: string },
+    onClick: (recipeId: string, name: string) => void
 }
 
 const CreateIngredient = ({ shownRecipe, onClick }: Props) => {

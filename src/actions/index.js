@@ -19,7 +19,7 @@ import type {
     UnselectAllRecipes
 } from '../types/actions';
 
-export const createRecipe = (name: Recipe.name): CreateRecipe => {
+export const createRecipe = (name: string): CreateRecipe => {
     return {
         type: 'CREATE_RECIPE',
         id: uuid.v4(),
@@ -27,7 +27,7 @@ export const createRecipe = (name: Recipe.name): CreateRecipe => {
     }
 }
 
-export const createIngredient = (name: Ingredient.name): CreateIngredient => {
+export const createIngredient = (name: string): CreateIngredient => {
     return {
         type: 'CREATE_INGREDIENT',
         id: uuid.v4(),
@@ -35,7 +35,7 @@ export const createIngredient = (name: Ingredient.name): CreateIngredient => {
     }
 }
 
-export const addIngredient = (recipeId: Recipe.id, ingredientId: Ingredient.id): AddIngredient => {
+export const addIngredient = (recipeId: string, ingredientId: string): AddIngredient => {
     return {
         type: 'ADD_INGREDIENT',
         ingredientId,
@@ -43,35 +43,35 @@ export const addIngredient = (recipeId: Recipe.id, ingredientId: Ingredient.id):
     }
 }
 
-export const showRecipe = (id: Recipe.id): ShowRecipe => {
+export const showRecipe = (id: string): ShowRecipe => {
     return {
         type: 'SHOW_RECIPE',
         id
     }
 }
 
-export const readRecipe = (id: Recipe.id): ReadRecipe => {
+export const readRecipe = (id: string): ReadRecipe => {
     return {
         type: 'READ_RECIPE',
         id
     }
 }
 
-export const unreadRecipe = (id: Recipe.id): UnreadRecipe => {
+export const unreadRecipe = (id: string): UnreadRecipe => {
     return {
         type: 'UNREAD_RECIPE',
         id
     }
 }
 
-export const selectRecipe = (id: Recipe.id): SelectRecipe => {
+export const selectRecipe = (id: string): SelectRecipe => {
     return {
         type: 'SELECT_RECIPE',
         id
     }
 }
 
-export const unselectRecipe = (id: Recipe.id): UnselectRecipe => {
+export const unselectRecipe = (id: string): UnselectRecipe => {
     return {
         type: 'UNSELECT_RECIPE',
         id

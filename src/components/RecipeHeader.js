@@ -5,16 +5,16 @@ import AppBar from 'material-ui/AppBar';
 
 import ReadButtons from './ReadButtons';
 
-import type { State, Recipe } from '../types/state';
+import type { RecipesById, IngredientsById } from '../types/state';
 
 type Props = {
-    recipesById: State.recipesById,
-    ingredientsById: State.ingredientsById,
+    recipesById: RecipesById,
+    ingredientsById: IngredientsById,
     shownRecipe: {
-        id: Recipe.id
+        id: string
     },
-    readRecipe: (id: Recipe.id) => void,
-    unreadRecipe: (id: Recipe.id) => void
+    readRecipe: (id: string) => void,
+    unreadRecipe: (id: string) => void
 };
 
 const RecipeHeader = ({ recipesById, shownRecipe, ingredientsById, readRecipe, unreadRecipe }: Props) => {

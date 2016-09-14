@@ -2,9 +2,7 @@
 
 import React from 'react';
 
-import type { ChildrenProps } from '../types/components';
-
-const Sidenav = ({ children }: ChildrenProps) => {
+const Sidenav = ({ children }: any) => {
     return (
         <div style={{flex: 1}}>
             {children}

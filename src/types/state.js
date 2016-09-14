@@ -10,18 +10,20 @@ export type Recipe = {
     name: string,
     isRead: boolean,
     isSelected: boolean,
-    ingredients: Ingredient.id[]
+    ingredients: string[]
 };
 
+export type IngredientsById = { [id: string]: Ingredient };
+export type RecipesById = { [id: string]: Recipe };
+export type Recipes = [];
+export type ShownRecipe = { id: string };
+
 export type State = {
-    ingredientsById: {
-        [key: string]: Ingredient
-    },
-    recipesById: {
-        [key: string]: Recipe
-    },
-    recipes: Recipe.id[],
-    shownRecipe: {
-        id: Recipe.id
-    }
+    ingredientsById: IngredientsById,
+    recipesById: RecipesById,
+    recipes: Recipes,
+    shownRecipe: ShownRecipe
 };
+
+export type OnSelectedRecipe = (id: string) => void;
+export type OnUnselectedRecipe = (id: string) => void;
